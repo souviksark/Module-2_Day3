@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Child Demo</title>
+    <style>
+        #parent {
+            border: 2px solid #007BFF;
+            padding: 20px;
+            margin: 20px;
+        }
+        .child {
+            background-color: #FFC107;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <h2>Parent Element</h2>
+    </div>
+    <button id="addChild">Add Child Element</button>
+
+    <script>
+        const parentElement = document.getElementById('parent');
+        const button = document.getElementById('addChild');
+        //call back function one function which calls it self
+        // functioName()
+        button.addEventListener('click', () => {
+            const childElement = document.createElement('button');
+            childElement.className = 'child';
+            childElement.textContent = 'add';
+            parentElement.appendChild(childElement);
+            //parentElement.appendChild(<button> added </button>);
+            // its creating <div tag>
+            // class name = <div class="child"> </div>
+            // text content = <div class="child">I am a child element!' </div>
+            //.appendChild is one of the method => add or create HTML elements
+        });
+    </script>
+</body>
+</html>
